@@ -1,9 +1,20 @@
 :root {
-    --primary-color: #6c3483;       /* Morado más oscuro */
-    --secondary-color: #1e8449;     /* Verde más oscuro */
-    --accent-color: #e74c3c;        /* Rojo vibrante (sin cambios) */
-    --light-bg: #f5f6fa;            /* Fondo ligeramente colorido (sin cambios) */
-    --dark-text: #2c3e50;           /* Texto oscuro (sin cambios) */
+    /* Diversity-inspired color palette */
+    --terracotta-red: #D95F44;
+    --soft-teal: #5A9A8D;
+    --burnt-orange: #DC8123;
+    --mustard-yellow: #E1B650;
+    --olive-green: #7A8A3D;
+    --salmon-pink: #F08D74;
+    --deep-cyan: #368B8E;
+    --muted-sage: #ADC1A0;
+
+    /* Application colors */
+    --primary-color: var(--terracotta-red);
+    --secondary-color: var(--soft-teal);
+    --accent-color: var(--burnt-orange);
+    --light-bg: var(--muted-sage);
+    --dark-text: var(--deep-cyan);
     --white: #ffffff;
 }
 
@@ -133,8 +144,10 @@ header {
 }
 
 /* Hero Section */
+/* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #6c348322, #1e844922);
+    /* Use terracotta red and soft teal with 20% opacity */
+    background: linear-gradient(135deg, #D95F4422, #5A9A8D22);
     padding: 8rem 0 4rem;
     text-align: center;
 }
@@ -308,7 +321,8 @@ section:nth-child(even) {
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, var(--primary-color), #5b2c6f);
+    /* Gradient between terracotta red and soft teal */
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
     padding: 3rem 0;
     text-align: center;
