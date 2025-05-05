@@ -16,6 +16,18 @@
     --light-bg: var(--muted-sage);
     --dark-text: var(--deep-cyan);
     --white: #ffffff;
+    /* Mosaic pattern variables */
+    --mosaic-size: 160px;
+    --mosaic-pattern: repeating-conic-gradient(
+        var(--terracotta-red) 0deg 45deg,
+        var(--soft-teal) 45deg 90deg,
+        var(--burnt-orange) 90deg 135deg,
+        var(--mustard-yellow) 135deg 180deg,
+        var(--olive-green) 180deg 225deg,
+        var(--salmon-pink) 225deg 270deg,
+        var(--deep-cyan) 270deg 315deg,
+        var(--muted-sage) 315deg 360deg
+    );
 }
 
 * {
@@ -29,6 +41,10 @@ body {
     color: var(--dark-text);
     line-height: 1.6;
     background-color: var(--white);
+    /* Patchwork mosaic background */
+    background-image: var(--mosaic-pattern);
+    background-size: var(--mosaic-size) var(--mosaic-size);
+    background-repeat: repeat;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -82,10 +98,6 @@ header {
     font-size: 1.5rem;
     color: var(--primary-color);
     text-decoration: none;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .nav-links {
@@ -145,9 +157,10 @@ header {
 
 /* Hero Section */
 /* Hero Section */
+/* Hero Section */
 .hero {
-    /* Use terracotta red and soft teal with 20% opacity */
-    background: linear-gradient(135deg, #D95F4422, #5A9A8D22);
+    /* Remove gradient; use transparent to show mosaic pattern */
+    background: transparent;
     padding: 8rem 0 4rem;
     text-align: center;
 }
@@ -169,7 +182,8 @@ header {
 
 .btn {
     display: inline-block;
-    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    /* Flat accent button background */
+    background-color: var(--accent-color);
     color: var(--white);
     padding: 0.8rem 2rem;
     border-radius: 30px;
@@ -182,6 +196,8 @@ header {
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    /* Hover to mustard yellow for contrast */
+    background-color: var(--mustard-yellow);
 }
 
 /* Sections */
@@ -189,8 +205,9 @@ section {
     padding: 4rem 0;
 }
 
+/* Remove alternating background stripes to allow full mosaic pattern */
 section:nth-child(even) {
-    background-color: var(--light-bg);
+    background: transparent;
 }
 
 .section-title {
@@ -216,7 +233,8 @@ section:nth-child(even) {
 }
 
 .objective-icon {
-    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    /* Solid soft teal background for icons */
+    background-color: var(--secondary-color);
     color: var(--white);
     width: 40px;
     height: 40px;
@@ -321,8 +339,8 @@ section:nth-child(even) {
 
 /* Footer */
 footer {
-    /* Gradient between terracotta red and soft teal */
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    /* Solid olive green footer background */
+    background-color: var(--olive-green);
     color: var(--white);
     padding: 3rem 0;
     text-align: center;
